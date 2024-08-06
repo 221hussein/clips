@@ -12,10 +12,10 @@ export class NavComponent implements OnInit{
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  
+
   openModal($event: Event) {
     $event.preventDefault()
-    this.modal.toggleModal()
+    this.modal.toggleModal('auth')
   }
 
 }
