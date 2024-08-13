@@ -7,15 +7,25 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  registerForm = new FormGroup({
-    name: new FormControl('', [
+    name = new FormControl('', [
       Validators.required,
-    ]),
-    email: new FormControl(''),
-    age: new FormControl(''),
-    password: new FormControl(''),
-    comfirm_password: new FormControl(''),
-    phoneNumber: new FormControl(''),
-  })
+      Validators.minLength(2)
+    ])
+    email = new FormControl('')
+    age = new FormControl('')
+    password = new FormControl('')
+    comfirm_password = new FormControl('')
+    phoneNumber = new FormControl('')
+
+    registerForm = new FormGroup({
+     name: this.name,
+     email: this.email,
+     age: this.age,
+     password: this.password,
+     confirm_password: this.comfirm_password,
+     phoneNumber : this.phoneNumber 
+    })
+
+
 
 }
